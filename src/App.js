@@ -11,9 +11,14 @@ import {GestorEjecutivo} from "./pages/gen/GestorEjecutivo";
 import {DemoCards, DemoLogin, DemoPage} from "./layouts/Demo"
 import {JedaiIdle} from "./components/JedaiIdle";
 
+
+import { NuevoFiltrosSiniestros } from 'pages/vam/siniestros-portal/NuevoFiltrosSiniestros';
+
+
 function App() {
     const user = useSelector(state => state.user);
     const isAdmin = user.isAdmin;
+    
 
     return (
         user.id ?
@@ -35,12 +40,12 @@ function App() {
             </>
             :
             <Switch>
-                <Route exact path="/demo" component={DemoPage}/>
+                <Route exact path="/demo" component={NuevoFiltrosSiniestros}/>
                 <Route exact path="/demo-cards" component={DemoCards}/>
                 <Route exact path="/demo-login" component={DemoLogin}/>
                 <Route exact path="/login/:hash" component={Login}/>
                 <Route exact path="/recuperar" component={Recuperar}/>
-                <Route component={Login}/>
+                <Route component={GestorEjecutivo}/>
             </Switch>
     );
 }
