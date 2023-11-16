@@ -11,7 +11,6 @@ $rt-striped-bg: $table-striped-bg;
 $rt-table-row-bg: $table-bg;
 $rt-table-line-height-base: $line-height-base;
 
-
 // header
 $rt-header-shadow: none;
 $rt-header-padding-x: 0;
@@ -23,7 +22,7 @@ $rt-header-font-weight: bold;
 // Pagination
 $rt-pagination-shadow: none;
 $rt-pagination-padding-x: 0;
-$rt-pagination-padding-y: $spacer * .5;
+$rt-pagination-padding-y: $spacer * 0.5;
 $rt-pagination-border-width: 1px;
 $rt-pagination-border-color: $primary;
 
@@ -36,7 +35,6 @@ $rt-input-btn-border-radius: $border-radius;
 
 $rt-btn-bg: $primary;
 $rt-btn-color: color-contrast($rt-btn-bg);
-
 
 .ReactTable {
   position: relative;
@@ -142,6 +140,8 @@ $rt-btn-color: color-contrast($rt-btn-bg);
       transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       box-shadow: inset 0 0 0 0 transparent;
 
+      text-align: center;
+
       &.-cursor-pointer {
         cursor: pointer;
       }
@@ -159,7 +159,7 @@ $rt-btn-color: color-contrast($rt-btn-bg);
       }
 
       &:focus {
-        outline-width: 0
+        outline-width: 0;
       }
     }
 
@@ -469,7 +469,6 @@ $rt-btn-color: color-contrast($rt-btn-bg);
   }
 }
 
-
 // Customizations
 .ReactTable {
   --table-row-gap: #{rem(6px)};
@@ -478,31 +477,37 @@ $rt-btn-color: color-contrast($rt-btn-bg);
 
   .rt-thead {
     .-cursor-pointer {
-
       display: flex;
 
       &::before {
-        content: '';
+        content: "";
         display: block;
         margin-right: rem(6px);
         width: 20px;
         height: 1em * $rt-table-line-height-base;
-        background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g fill='#{$light}'><path d='M10.66 30.82l4.96-5.16c0.51-0.51 0.51-1.38 0-1.88a1.24 1.24 0 0 0-1.8 0l-4.57 4.73v-27.17c0-0.74-0.58-1.31-1.25-1.34-0.7 0-1.28 0.61-1.28 1.34v27.27l-4.58-4.83a1.24 1.24 0 0 0-1.79 0h0.03c-0.51 0.51-0.51 1.38 0 1.88l4.9 5.16c1.47 1.57 3.9 1.57 5.38 0z'></path></g><g fill='#{$light}'><path d='M21.34 1.18l-4.96 5.16c-0.51 0.51-0.51 1.38 0 1.88 0.48 0.51 1.28 0.51 1.8 0l4.57-4.73v27.2c0 0.74 0.58 1.31 1.25 1.34 0.7 0 1.28-0.61 1.28-1.34v-27.3l4.58 4.83c0.48 0.51 1.31 0.51 1.79 0 0.51-0.51 0.51-1.38 0-1.88l-4.9-5.16c-1.47-1.57-3.9-1.57-5.37 0z'></path></g></svg>"));
+        background-image: escape-svg(
+          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g fill='#{$light}'><path d='M10.66 30.82l4.96-5.16c0.51-0.51 0.51-1.38 0-1.88a1.24 1.24 0 0 0-1.8 0l-4.57 4.73v-27.17c0-0.74-0.58-1.31-1.25-1.34-0.7 0-1.28 0.61-1.28 1.34v27.27l-4.58-4.83a1.24 1.24 0 0 0-1.79 0h0.03c-0.51 0.51-0.51 1.38 0 1.88l4.9 5.16c1.47 1.57 3.9 1.57 5.38 0z'></path></g><g fill='#{$light}'><path d='M21.34 1.18l-4.96 5.16c-0.51 0.51-0.51 1.38 0 1.88 0.48 0.51 1.28 0.51 1.8 0l4.57-4.73v27.2c0 0.74 0.58 1.31 1.25 1.34 0.7 0 1.28-0.61 1.28-1.34v-27.3l4.58 4.83c0.48 0.51 1.31 0.51 1.79 0 0.51-0.51 0.51-1.38 0-1.88l-4.9-5.16c-1.47-1.57-3.9-1.57-5.37 0z'></path></g></svg>")
+        );
         background-repeat: no-repeat;
         background-position: center;
         background-size: 1em;
       }
 
-      &.-sort-asc, &.-sort-desc {
+      &.-sort-asc,
+      &.-sort-desc {
         box-shadow: none;
       }
 
       &.-sort-desc::before {
-        background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g fill='#{$primary}'><path d='M10.66 30.82l4.96-5.16c0.51-0.51 0.51-1.38 0-1.88a1.24 1.24 0 0 0-1.8 0l-4.57 4.73v-27.17c0-0.74-0.58-1.31-1.25-1.34-0.7 0-1.28 0.61-1.28 1.34v27.27l-4.58-4.83a1.24 1.24 0 0 0-1.79 0h0.03c-0.51 0.51-0.51 1.38 0 1.88l4.9 5.16c1.47 1.57 3.9 1.57 5.38 0z'></path></g><g fill='#{$light}'><path d='M21.34 1.18l-4.96 5.16c-0.51 0.51-0.51 1.38 0 1.88 0.48 0.51 1.28 0.51 1.8 0l4.57-4.73v27.2c0 0.74 0.58 1.31 1.25 1.34 0.7 0 1.28-0.61 1.28-1.34v-27.3l4.58 4.83c0.48 0.51 1.31 0.51 1.79 0 0.51-0.51 0.51-1.38 0-1.88l-4.9-5.16c-1.47-1.57-3.9-1.57-5.37 0z'></path></g></svg>"));
+        background-image: escape-svg(
+          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g fill='#{$primary}'><path d='M10.66 30.82l4.96-5.16c0.51-0.51 0.51-1.38 0-1.88a1.24 1.24 0 0 0-1.8 0l-4.57 4.73v-27.17c0-0.74-0.58-1.31-1.25-1.34-0.7 0-1.28 0.61-1.28 1.34v27.27l-4.58-4.83a1.24 1.24 0 0 0-1.79 0h0.03c-0.51 0.51-0.51 1.38 0 1.88l4.9 5.16c1.47 1.57 3.9 1.57 5.38 0z'></path></g><g fill='#{$light}'><path d='M21.34 1.18l-4.96 5.16c-0.51 0.51-0.51 1.38 0 1.88 0.48 0.51 1.28 0.51 1.8 0l4.57-4.73v27.2c0 0.74 0.58 1.31 1.25 1.34 0.7 0 1.28-0.61 1.28-1.34v-27.3l4.58 4.83c0.48 0.51 1.31 0.51 1.79 0 0.51-0.51 0.51-1.38 0-1.88l-4.9-5.16c-1.47-1.57-3.9-1.57-5.37 0z'></path></g></svg>")
+        );
       }
 
       &.-sort-asc::before {
-        background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g fill='#{$light}'><path d='M10.66 30.82l4.96-5.16c0.51-0.51 0.51-1.38 0-1.88a1.24 1.24 0 0 0-1.8 0l-4.57 4.73v-27.17c0-0.74-0.58-1.31-1.25-1.34-0.7 0-1.28 0.61-1.28 1.34v27.27l-4.58-4.83a1.24 1.24 0 0 0-1.79 0h0.03c-0.51 0.51-0.51 1.38 0 1.88l4.9 5.16c1.47 1.57 3.9 1.57 5.38 0z'></path></g><g fill='#{$primary}'><path d='M21.34 1.18l-4.96 5.16c-0.51 0.51-0.51 1.38 0 1.88 0.48 0.51 1.28 0.51 1.8 0l4.57-4.73v27.2c0 0.74 0.58 1.31 1.25 1.34 0.7 0 1.28-0.61 1.28-1.34v-27.3l4.58 4.83c0.48 0.51 1.31 0.51 1.79 0 0.51-0.51 0.51-1.38 0-1.88l-4.9-5.16c-1.47-1.57-3.9-1.57-5.37 0z'></path></g></svg>"));
+        background-image: escape-svg(
+          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><g fill='#{$light}'><path d='M10.66 30.82l4.96-5.16c0.51-0.51 0.51-1.38 0-1.88a1.24 1.24 0 0 0-1.8 0l-4.57 4.73v-27.17c0-0.74-0.58-1.31-1.25-1.34-0.7 0-1.28 0.61-1.28 1.34v27.27l-4.58-4.83a1.24 1.24 0 0 0-1.79 0h0.03c-0.51 0.51-0.51 1.38 0 1.88l4.9 5.16c1.47 1.57 3.9 1.57 5.38 0z'></path></g><g fill='#{$primary}'><path d='M21.34 1.18l-4.96 5.16c-0.51 0.51-0.51 1.38 0 1.88 0.48 0.51 1.28 0.51 1.8 0l4.57-4.73v27.2c0 0.74 0.58 1.31 1.25 1.34 0.7 0 1.28-0.61 1.28-1.34v-27.3l4.58 4.83c0.48 0.51 1.31 0.51 1.79 0 0.51-0.51 0.51-1.38 0-1.88l-4.9-5.16c-1.47-1.57-3.9-1.57-5.37 0z'></path></g></svg>")
+        );
       }
     }
   }
@@ -570,7 +575,8 @@ $rt-btn-color: color-contrast($rt-btn-bg);
       padding: calc($spacer * 0.5) 0;
     }
 
-    .-previous, .-next {
+    .-previous,
+    .-next {
       padding: 0;
       justify-content: center;
     }

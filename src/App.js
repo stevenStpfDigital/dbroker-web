@@ -45,7 +45,7 @@ function App() {
                 <Route exact path="/demo-login" component={DemoLogin}/>
                 <Route exact path="/login/:hash" component={Login}/>
                 <Route exact path="/recuperar" component={Recuperar}/>
-                <Route component={GestorEjecutivo}/>
+                <Route component={FiltrosSiniestros}/>
             </Switch>
     );
 }

@@ -1,3 +1,4 @@
+@import "variables";
 $primary-color: #91b5c9;
 
 .img-avatar {
@@ -26,7 +27,7 @@ $primary-color: #91b5c9;
 
 .img-no-select {
   @extend .img-avatar;
-  filter: opacity(.3);
+  filter: opacity(0.3);
 }
 
 .c-pointer {
@@ -50,7 +51,7 @@ $primary-color: #91b5c9;
   width: 50px;
   height: 50px;
   border: 4px solid #f3f3f3;
-  border-top: 4px solid #00BCEA;
+  border-top: 4px solid #00bcea;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -102,4 +103,130 @@ $primary-color: #91b5c9;
   &:active {
     border: none;
   }
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 45px; /* Ancho igual al tamaño del icono más el relleno en ambos lados */
+  height: 45px;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: $light; /* Fondo negro */
+  border-radius: 50%; /* Forma de círculo */
+  transition: all 0.3s; /* Transición suave para hover */
+
+  &:hover {
+    background-color: $secondary; /* Cambio de color gris al hacer hover */
+  }
+  z-index: 10;
+}
+
+.iconBurgerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+}
+.customBurgerIcon {
+  padding: 10px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  transition: all ease-in 2s;
+
+  &:hover {
+    transform: scale(1.1); // Agrandar el icono al 110% del tamaño original
+    color: #ff6600; // Cambiar el color en hover
+  }
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #4c5168;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/*STYLING SELECT COMPONENTS FROM REACT_SELECT*/
+
+.css-1u9des2-indicatorSeparator {
+  display: none;
+}
+
+.css-1xc3v61-indicatorContainer {
+  padding: 0 !important;
+}
+.css-15lsz6c-indicatorContainer {
+  padding: 0 !important;
+}
+.css-166bipr-Input {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.css-qbdosj-Input {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.css-13cymwt-control {
+  min-height: 26px !important;
+  border-color: #ced4da !important;
+}
+.css-t3ipsp-control {
+  min-height: 26px !important;
+}
+
+// .css-t3ipsp-control:hover {
+//   border-color: #8f2a8a;
+// }
+
+.prioridad-media {
+  background-color: $priorityYellow;
+}
+.prioridad-alta {
+  background-color: $priorityRed;
 }
