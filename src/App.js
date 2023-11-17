@@ -10,7 +10,7 @@ import {AdminHome} from "./pages/home/AdminHome";
 import {GestorEjecutivo} from "./pages/gen/GestorEjecutivo";
 import {DemoCards, DemoLogin, DemoPage} from "./layouts/Demo"
 import {JedaiIdle} from "./components/JedaiIdle";
-import { FiltrosSiniestros } from 'pages/vam/siniestros-portal/FiltrosSiniestros';
+
 
 import { NuevoFiltrosSiniestros } from 'pages/vam/siniestros-portal/NuevoFiltrosSiniestros';
 

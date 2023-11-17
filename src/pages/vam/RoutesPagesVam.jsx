@@ -11,7 +11,6 @@ import {FiltrosSiniestros} from "./siniestros-portal/FiltrosSiniestros";
 import {SiniestroPortalEdit} from "./siniestros-portal/SiniestroPortalEdit";
 import {Home} from "../home/Home";
 
-
 export const RoutesPagesVam = () => {
     const user = useSelector(state => state.user);
 
@@ -20,7 +19,6 @@ export const RoutesPagesVam = () => {
             <Route path="/vam/home" exact component={Home}/>
             <Route exact path="/vam/siniestros-reportados" component={FiltrosSiniestros}
                    title={"Siniestros Reportados"}/>
-   
             <Route exact path="/vam/reportar-siniestro/:cdComp/:cdReclamo/:cdIncSiniestro?"
                    component={SiniestroPortalEdit}
                    title={"Portal Siniestros"}/>
